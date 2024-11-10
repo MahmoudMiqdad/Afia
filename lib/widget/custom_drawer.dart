@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/color.dart';
 
-class Custom_Drawer extends StatelessWidget {
-  const Custom_Drawer({
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({
     super.key,
   });
 
@@ -14,34 +14,34 @@ class Custom_Drawer extends StatelessWidget {
       width: 270,
       child: Column(
         children: [
-          const UserAccountsDrawerHeader(
+           const UserAccountsDrawerHeader(
           
           accountName: Text("MAHMOUD"),
           accountEmail: Text("MAHMOUD@gmile.com"),
           currentAccountPicture: CircleAvatar(
-            backgroundImage: AssetImage('assets/images/logo.png',),
+            backgroundImage: AssetImage('images/Afia1.PNG',),
           ),
           decoration: BoxDecoration(
-            color:Appcolor.appBar,
+            color:Appcolor.maincolor,
           ),
                         ),
          
         
       
           ListTile(
-            leading: Icon(Icons.person),
-            title: Text('الملف الشخصي'),
+            leading: const Icon(Icons.person,color: Appcolor.maincolor,size: 30,),
+            title: const Text('Profile',style: TextStyle(color: Appcolor.border,fontSize: 18,fontWeight: FontWeight.bold),),
             onTap: () {
           
-              Navigator.pop(context);
+            
             },
           ),
           ListTile(
-            leading: Icon(Icons.logout),
-            title: Text('تسجيل الخروج'),
+            leading: const Icon(Icons.logout,color: Appcolor.maincolor,size: 30,),
+            title: const Text('Log Out',style: TextStyle(color: Appcolor.border,fontSize: 18,fontWeight: FontWeight.bold)),
             onTap: () {
-              // ضع هنا كود تسجيل الخروج
-              Navigator.pop(context);
+              
+         
             },
           ),
         ],

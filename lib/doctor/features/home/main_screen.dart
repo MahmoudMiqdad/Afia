@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/doctor/features/appointments/AppointmentsPage.dart';
-import 'package:flutter_application_1/doctor/features/Notifications/NotificationsPage.dart';
-import 'package:flutter_application_1/doctor/features/home/home%20page.dart';
+import 'package:flutter_application_1/doctor/features/appointments/completed_appointments.dart';
+import 'package:flutter_application_1/doctor/features/appointments/my_appointments.dart';
+import 'package:flutter_application_1/doctor/features/home/home_page.dart';
 import 'package:flutter_application_1/color.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -16,8 +16,9 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _pages = [
     Homepage(),
-    AppointmentsPage(),
-    NotificationsPage(),
+   
+    Myappointments(),
+     CompletedAppointments(),
   ];
 
   void _onPageChanged(int index) {
@@ -48,7 +49,7 @@ class _MainScreenState extends State<MainScreen> {
         items: const <Widget>[
           Icon(Icons.home, size: 30, color: Colors.white),
           Icon(Icons.calendar_today, size: 30, color: Colors.white),
-          Icon(Icons.notifications, size: 30, color: Colors.white),
+          Icon(Icons.check_circle, size: 30, color: Colors.white),
         ],
         onTap: _onItemTapped,
       ),

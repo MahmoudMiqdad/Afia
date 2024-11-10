@@ -1,12 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/doctor/features/home/Mainscreen.dart';
+import 'package:flutter_application_1/doctor/features/home/main_screen.dart';
 import 'package:flutter_application_1/color.dart';
 import 'package:flutter_application_1/doctor/features/auth/pages/sign_up.dart';
-
-import 'package:flutter_application_1/widget/CustomTextField.dart';
-
-
+import 'package:flutter_application_1/widget/custom_textfield.dart';
 class LogInPage extends StatefulWidget {
   const LogInPage({super.key});
 
@@ -45,12 +42,12 @@ class _LogInPageState extends State<LogInPage> {
             ),
             Container(
                  padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 10),
-              child: Text('Log In ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),textAlign:TextAlign.start)),
+              child: const Text('Log In ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),textAlign:TextAlign.start)),
               Column(
                 children: [
                    Container(
               padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: CustomTextField(
+              child: const CustomTextField(
                 label: 'Phone number',
                 prefixIcon: Icons.phone,
                 keyboardType: TextInputType.number,
@@ -100,7 +97,7 @@ class _LogInPageState extends State<LogInPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SignInPage(),
+                      builder: (context) => const SignInPage(),
                     ),
                   );
                 },

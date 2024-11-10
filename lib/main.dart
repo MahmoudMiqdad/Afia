@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/doctor/features/auth/pages/log_in_page.dart';
-import 'package:flutter_application_1/widget/Botom_navigation_bar.dart';
-import 'package:flutter_application_1/doctor/features/home/home%20page.dart';
 import 'package:flutter_application_1/themes.dart';
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -20,8 +16,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: lightThem,
       debugShowCheckedModeBanner: false,
-      home: LogInPage(),
+      home: const LogInPage(),
     );
   }
 }
-//Botom_navigation_bar()

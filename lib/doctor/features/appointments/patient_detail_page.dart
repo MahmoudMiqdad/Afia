@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/color.dart';
-import 'package:flutter_application_1/widget/custom_textfield_date.dart';
 
-class PatientDetailPage extends StatelessWidget {
+
+class PatientDetail extends StatelessWidget {
   final Map<String, dynamic> patient;
 
- PatientDetailPage({Key? key, required this.patient}) : super(key: key);
+ PatientDetail({super.key, required this.patient});
  final GlobalKey<FormState> nameValidator = GlobalKey<FormState>();
  final TextEditingController nameController = TextEditingController();
   @override
@@ -16,9 +16,9 @@ class PatientDetailPage extends StatelessWidget {
         backgroundColor: Appcolor.maincolor,
         title: Text(
           '${patient['name']}\'s Details',
-          style: TextStyle(color: Appcolor.whitecolor),
+          style: const TextStyle(color: Appcolor.whitecolor),
         ),
-        iconTheme: IconThemeData(color: Appcolor.whitecolor),
+        iconTheme: const IconThemeData(color: Appcolor.whitecolor),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -43,18 +43,18 @@ class PatientDetailPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Center(
               child: Text(
                 patient['name'],
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
                   color: Appcolor.blackcolor,
                 ),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Center(
               child: Text(
                 'Age: ${patient['age']}',
@@ -64,22 +64,22 @@ class PatientDetailPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               children: [
-                Icon(Icons.location_on, color: Appcolor.maincolor),
-                SizedBox(width: 8),
+                const Icon(Icons.location_on, color: Appcolor.maincolor),
+                const SizedBox(width: 8),
                 Text(
                   patient['location'],
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     color: Appcolor.blackcolor,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'Patient Condition:',
               style: TextStyle(
                 fontSize: 18,
@@ -87,7 +87,7 @@ class PatientDetailPage extends StatelessWidget {
                 color: Appcolor.maincolor,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Container(
               padding: const EdgeInsets.all(12.0),
               decoration: BoxDecoration(
@@ -97,31 +97,10 @@ class PatientDetailPage extends StatelessWidget {
               ),
               child: Text(
                 patient['description'],
-                style: TextStyle(fontSize: 16, color: Appcolor.blackcolor),
+                style: const TextStyle(fontSize: 16, color: Appcolor.blackcolor),
               ),
             ),
-            SizedBox(height: 30),
-            Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Appcolor.maincolor,
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-                onPressed: () {
-                  _showApprovalDialog(context);
-                },
-                child: Text(
-                  'Approve Request',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Appcolor.whitecolor,
-                  ),
-                ),
-              ),
-            ),
+          
           ],
         ),
       ),
@@ -150,39 +129,4 @@ class PatientDetailPage extends StatelessWidget {
         );
       },
     );
-  }
-
-  void _showApprovalDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text('Set Appointment Date and Time'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              customTextFieldDate(controller:nameController ,errorText: 'Please enter a date',formKey:nameValidator ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text('Cancel'),
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Appcolor.maincolor,
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-                print('Appointment approved');
-                // هنا يمكن تنفيذ منطق حفظ الموعد المختار.
-              },
-              child: Text('Confirm'),
-            ),
-          ],
-        );
-      },
-    );
-  }
-}
+  }}
